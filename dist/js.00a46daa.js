@@ -6119,7 +6119,118 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const templateFunction = _handlebars.default.template({
   "1": function (container, depth0, helpers, partials, data) {
-    return "<div class=\"photo-card\">\r\n  <img src=\"\" alt=\"\" loading=\"lazy\" />\r\n  <div class=\"info\">\r\n    <p class=\"info-item\">\r\n      <b>Likes</b>\r\n    </p>\r\n    <p class=\"info-item\">\r\n      <b>Views</b>\r\n    </p>\r\n    <p class=\"info-item\">\r\n      <b>Comments</b>\r\n    </p>\r\n    <p class=\"info-item\">\r\n      <b>Downloads</b>\r\n    </p>\r\n  </div>\r\n</div>\r\n";
+    var helper,
+        alias1 = depth0 != null ? depth0 : container.nullContext || {},
+        alias2 = container.hooks.helperMissing,
+        alias3 = "function",
+        alias4 = container.escapeExpression,
+        lookupProperty = container.lookupProperty || function (parent, propertyName) {
+      if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+        return parent[propertyName];
+      }
+
+      return undefined;
+    };
+
+    return "    <div class=\"photo-card\">\r\n        <a class=\"gallery__item\" href=\"" + alias4((helper = (helper = lookupProperty(helpers, "largeImageURL") || (depth0 != null ? lookupProperty(depth0, "largeImageURL") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "largeImageURL",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 39
+        },
+        "end": {
+          "line": 3,
+          "column": 56
+        }
+      }
+    }) : helper)) + "\">\r\n            <div class=\"info\">\r\n                <img class=\"gallery__image\" src=\"" + alias4((helper = (helper = lookupProperty(helpers, "webformatURL") || (depth0 != null ? lookupProperty(depth0, "webformatURL") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "webformatURL",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 49
+        },
+        "end": {
+          "line": 5,
+          "column": 65
+        }
+      }
+    }) : helper)) + "\" alt=\"" + alias4((helper = (helper = lookupProperty(helpers, "tags") || (depth0 != null ? lookupProperty(depth0, "tags") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "tags",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 72
+        },
+        "end": {
+          "line": 5,
+          "column": 80
+        }
+      }
+    }) : helper)) + "\" loading=\"lazy\" />\r\n            \r\n                <div class=\"info-list\">\r\n                    <p class=\"info-item\">\r\n                        <span class=\"info-span\"><b>Likes</b>\r\n                        " + alias4((helper = (helper = lookupProperty(helpers, "likes") || (depth0 != null ? lookupProperty(depth0, "likes") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "likes",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 10,
+          "column": 24
+        },
+        "end": {
+          "line": 10,
+          "column": 33
+        }
+      }
+    }) : helper)) + "</span>\r\n                    </p>\r\n                    <p class=\"info-item\">\r\n                        <b>Views</b>\r\n                        " + alias4((helper = (helper = lookupProperty(helpers, "views") || (depth0 != null ? lookupProperty(depth0, "views") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "views",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 14,
+          "column": 24
+        },
+        "end": {
+          "line": 14,
+          "column": 33
+        }
+      }
+    }) : helper)) + "\r\n                    </p>\r\n                    <p class=\"info-item\">\r\n                        <b>Comments</b>\r\n                        " + alias4((helper = (helper = lookupProperty(helpers, "comments") || (depth0 != null ? lookupProperty(depth0, "comments") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "comments",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 18,
+          "column": 24
+        },
+        "end": {
+          "line": 18,
+          "column": 36
+        }
+      }
+    }) : helper)) + "\r\n                    </p>\r\n                    <p class=\"info-item\">\r\n                        <b>Downloads</b>\r\n                        " + alias4((helper = (helper = lookupProperty(helpers, "downloads") || (depth0 != null ? lookupProperty(depth0, "downloads") : depth0)) != null ? helper : alias2, typeof helper === alias3 ? helper.call(alias1, {
+      "name": "downloads",
+      "hash": {},
+      "data": data,
+      "loc": {
+        "start": {
+          "line": 22,
+          "column": 24
+        },
+        "end": {
+          "line": 22,
+          "column": 37
+        }
+      }
+    }) : helper)) + "\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </a>\r\n    </div>\r\n";
   },
   "compiler": [8, ">= 4.3.0"],
   "main": function (container, depth0, helpers, partials, data) {
@@ -6144,7 +6255,7 @@ const templateFunction = _handlebars.default.template({
           "column": 0
         },
         "end": {
-          "line": 19,
+          "line": 28,
           "column": 9
         }
       }
@@ -6579,13 +6690,108 @@ const axios = require('axios'); // key - твой уникальный ключ 
 // Для уведомлений используй библиотеку notiflix.
 
 
+const API_KEY = '24875841-80f192125ca760fadc7a056b3';
+const PER_PAGE = 40;
+let page = 1;
+let searchKey;
+let pageAmount;
+const searchForm = document.getElementById('search-form');
+const searchBtn = document.querySelector('button[type=submit]');
+const searchInput = document.querySelector('input[name=searchQuery]');
+const gallery = document.querySelector('.gallery');
+const newsApiService = new NewsApiService();
+console.log(newsApiService);
 const {
   height: cardHeight
-} = document.querySelector(".gallery").firstElementChild.getBoundingClientRect();
+} = gallery.firstElementChild.getBoundingClientRect();
 window.scrollBy({
   top: cardHeight * 2,
   behavior: "smooth"
 });
+const loadMoreBtn = new LoadMoreBtn({
+  selector: '[data-action="load-more"]',
+  hidden: true
+});
+searchForm.addEventListener('submit', onSearchForm);
+loadMoreBtn.button.addEventListener('click', onLoadMore);
+
+function onSearchForm(e) {
+  e.preventDefault();
+  newsApiService.query = searchInput.value.trim();
+
+  if (newsApiService === '') {
+    e.currentTarget.reset();
+    onFetchError();
+    loadMoreBtn.disable();
+  }
+
+  newsApiService.fetchPhotoCards().then(photos => {
+    console.log(photos);
+
+    if (photos.hits.length === 0) {
+      onFetchError();
+      loadMoreBtn.hide();
+    } else if (photos.hits.length >= 40) {
+      loadMoreBtn.show();
+      clearPhotosContainer();
+      appendPhotosMarkup(photos);
+      Notify.success(`Hooray! We found ${photos.totalHits} images.`);
+    }
+  });
+  newsApiService.resetPage();
+  e.currentTarget.reset();
+  scroll();
+}
+
+async function appendPhotosMarkup(photos) {
+  const markup = await photoCard(photos.hits);
+  gallery.insertAdjacentHTML("beforeend", markup);
+
+  if (photos.hits.length < 40 && photos.hits.length >= 1) {
+    onFetchInfo();
+    loadMoreBtn.hide();
+  }
+
+  lightbox.resh('show.simpleLightbox');
+}
+
+function scroll() {
+  let scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+  window.scrollBy({
+    top: scrollHeight * -2,
+    behavior: "auto"
+  });
+}
+
+function onLoadMore() {
+  loadMoreBtn.disable();
+  newsApiService.fetchPhotoCards().then(photos => {
+    appendPhotosMarkup(photos);
+    loadMoreBtn.enable();
+  });
+}
+
+function clearPhotosContainer() {
+  gallery.innerHTML = '';
+}
+
+function onFetchError() {
+  Report.failure('Failure', "Sorry, there are no images matching your search query. Please try again.", 'Okay');
+}
+
+function onFetchInfo() {
+  Notify.info("We're sorry, but you've reached the end of search results.");
+}
+
+var lightbox = new _simplelightbox.default('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+  navText: ['←', '→'],
+  widthRatio: 0.9,
+  heightRatio: 1,
+  fadeSpeed: 300,
+  spinner: true
+}).resh('show.simpleLightbox');
 },{"../css/styles.css":"css/styles.css","notiflix":"../node_modules/notiflix/dist/notiflix-aio-3.2.2.min.js","simplelightbox":"../node_modules/simplelightbox/dist/simple-lightbox.modules.js","./axiosGallery.js":"js/axiosGallery.js","../templates/cards.hbs":"templates/cards.hbs","simplelightbox/dist/simple-lightbox.min.css":"../node_modules/simplelightbox/dist/simple-lightbox.min.css","lodash.debounce":"../node_modules/lodash.debounce/index.js","axios":"../node_modules/axios/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -6614,7 +6820,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56524" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64460" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
